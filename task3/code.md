@@ -1,4 +1,4 @@
-# Smart Parking Fee Management System Using Python
+
 
 ## 1. Problem Statement
 
