@@ -52,9 +52,7 @@ Minimum Registrations = Minimum whole number of participants whose contributions
 ## 3. Flowchart Using 
 ```mermind
 
-The following flowchart represents the complete financial planning process, including expense calculation, sponsorship, participant contributions, and break-even analysis.
 
-```mermaid
 flowchart TD
     A([Start]) --> B[/Enter venue, equipment and transport costs/]
     B --> C[/Enter catering and certificate costs per person/]
