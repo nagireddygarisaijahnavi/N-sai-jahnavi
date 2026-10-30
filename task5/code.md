@@ -47,9 +47,7 @@ Finally, the program displays the seating arrangement with row and column identi
 ## 3. Flowchart Using 
 ```mermaid
 
-The following flowchart shows the complete process of generating the examination seating arrangement.
 
-```mermaid
 flowchart TD
     A([Start]) --> B[Set maximum classroom capacity]
     B --> C[/Enter number of rows and columns/]
