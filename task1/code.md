@@ -40,6 +40,8 @@ Finally, the system should display the ranked list of eligible students, rejecte
 12. Stop.
 
 ## 3. Flowchart
+```mermid
+
 
 Flowchart Lulus Dan Tidak Lulus - Teman Belajar
 
