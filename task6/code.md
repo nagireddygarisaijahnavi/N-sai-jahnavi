@@ -1,5 +1,6 @@
 
- ##1. Problem Statement
+
+## 1. Problem Statement
 
 The Retail Billing System with Multiple Discount Rules is designed to generate an itemized invoice for customers purchasing multiple products. The system calculates product costs based on quantities, applies category-specific taxes, provides discounts based on purchase thresholds, and enforces a maximum concession limit.
 
@@ -7,11 +8,10 @@ The program accepts product names, categories, prices, and quantities. It calcul
 
 The system also validates user inputs, prevents invalid quantities and prices, and displays an itemized invoice containing product details, discounts, taxes, and the final amount payable.
 
-8. Display the final amount payable.
 
 
 
- 2. Algorithm
+## 2. Algorithm
 
 **Step 1:** Start the program.
 
@@ -54,11 +54,10 @@ Final Bill = Total Subtotal − Total Discount + Total Tax
 ---
 
 ## 3. Flowchart Using 
-```mermiad
+```mermaid
 
 
-
-
+flowchart TD
     A([Start]) --> B[/Enter number of products/]
     B --> C[Initialize subtotal and invoice]
     C --> D[/Enter product name, category, price and quantity/]
@@ -90,10 +89,7 @@ Final Bill = Total Subtotal − Total Discount + Total Tax
     R --> S[Generate itemized invoice]
     S --> T[/Display invoice and total payable/]
     T --> U([Stop])
-
-
-
-
+```
 
 ## 5. Sample Input
 
@@ -138,3 +134,4 @@ Final Amount Payable: Rs. 9290.50
 
 ---
 
+| Product | Subtotal | Discount | Tax | Final amount |
