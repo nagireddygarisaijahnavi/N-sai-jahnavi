@@ -13,9 +13,7 @@ Develop a Python program to validate student course registrations using **tuples
 ## 2. Flowchart
 ```mermind
 
-Copy this code into the Mermaid editor to generate the flowchart.
 
-```mermaid
 flowchart TD
     A([Start]) --> B[Define student registration tuples]
     B --> C[Define course validation rules]
