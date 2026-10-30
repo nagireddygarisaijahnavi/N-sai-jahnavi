@@ -2,7 +2,7 @@ source code
 
 
 
-# Step 1: Get hospital charges
+Step 1: Get hospital charges
 consultation = float(input("Enter consultation charges: "))
 diagnostic = float(input("Enter diagnostic charges: "))
 treatment = float(input("Enter treatment charges: "))
