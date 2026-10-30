@@ -39,7 +39,7 @@ Finally, the system should display the ranked list of eligible students, rejecte
 11. Display the final summary.
 12. Stop.
 
-## 3. Flowchart
+ 3. Flowchart
 ```mermid
 
 
