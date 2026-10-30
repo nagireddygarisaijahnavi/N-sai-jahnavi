@@ -56,11 +56,6 @@ Hollow Diamond Pattern:
   3   3
    2 2
     1
-```
 
-## 6. Sample Input 
-
-```text
-Enter diamond size: -3
 ```
 
