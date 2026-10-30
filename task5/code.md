@@ -1,4 +1,5 @@
 
+
 ## 1. Problem Statement
 
 The Nested Loop Examination Seating Generator is designed to generate an examination seating arrangement using rows and columns in a classroom. The system assigns unique seat identifiers, manages reserved positions, applies alternate seating restrictions, and ensures that the seating arrangement does not exceed the fixed classroom capacity.
@@ -6,7 +7,6 @@ The Nested Loop Examination Seating Generator is designed to generate an examina
 The program accepts the number of rows and columns, reserved seat positions, and seating restrictions. Using nested loops, it checks each seat and determines whether it should be marked as available, reserved, or blocked due to alternate seating restrictions.
 
 Finally, the program displays the seating arrangement with row and column identifiers and provides a summary of total seats, reserved seats, blocked seats, and available seats.
-
 
 
 ## 2. Algorithm
@@ -44,8 +44,12 @@ Finally, the program displays the seating arrangement with row and column identi
 
 ---
 
-4 ##flowchart
-```mermind
+## 3. Flowchart Using 
+```mermaid
+
+The following flowchart shows the complete process of generating the examination seating arrangement.
+
+```mermaid
 flowchart TD
     A([Start]) --> B[Set maximum classroom capacity]
     B --> C[/Enter number of rows and columns/]
@@ -87,9 +91,6 @@ flowchart TD
     W --> X[Display seating summary]
     X --> Y([Stop])
 ```
-
-
-
 
 ## 5. Sample Input
 
