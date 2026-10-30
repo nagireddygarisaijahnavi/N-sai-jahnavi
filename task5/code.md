@@ -88,9 +88,7 @@ flowchart TD
     X --> Y([Stop])
 ```
 
-**To view the flowchart:** Copy the Mermaid code into the [Mermaid Live Editor](https://mermaid.live/?utm_source=chatgpt.com).
 
----
 
 
 ## 5. Sample Input
