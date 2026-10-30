@@ -14,8 +14,11 @@ The program should:
 7. Display whether the travel expenses are within the budget or exceed it.
 
 ## 2. Flowchart 
-```mermind
 
+
+
+```mermaid
+flowchart TD
     A([Start]) --> B[Enter travel budget]
     B --> C[Enter expenses, currencies and exchange rates]
     C --> D[Set conversion fee percentage]
@@ -37,6 +40,27 @@ The program should:
     Q --> R([End])
 ```
 
+
+## 4. Sample Input
+
+The program uses the following sample values:
+
+```text
+Travel Budget = 50000
+
+Exchange Rates:
+1 USD = Rs. 85
+1 EUR = Rs. 92
+1 GBP = Rs. 110
+
+Conversion Fee = 2%
+
+Travel Expenses:
+Hotel: 200 USD
+Food: 100 EUR
+Transport: 50 GBP
+Shopping: 150 USD
+```
 
 ## 5. Sample Output
 
@@ -79,3 +103,4 @@ Largest Category Amount: Rs. 17340.0
 Analysis Completed.
 ```
 
+**Conclusion:** The total travel expenditure is ₹45,339, which is within the ₹50,000 budget. The remaining budget is ₹4,661, and **Hotel** is the largest expense category.
