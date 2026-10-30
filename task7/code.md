@@ -9,6 +9,7 @@ The system accepts the estimated expenses, expected sponsorship amount, particip
 The program also checks whether the expected registrations and available sponsorship are sufficient to cover the event expenses. Finally, it displays a complete financial summary to help organizers plan the event effectively.
 
 
+
 ## 2. Algorithm
 
 **Step 1:** Start the program.
@@ -49,11 +50,11 @@ Minimum Registrations = Minimum whole number of participants whose contributions
 
 ---
 
-## 3. Flowchart Using 
-```mermind
+## 3. Flowchart Using
 
 
-
+```mermaid
+flowchart TD
     A([Start]) --> B[/Enter venue, equipment and transport costs/]
     B --> C[/Enter catering and certificate costs per person/]
     C --> D[/Enter expected participants/]
@@ -88,6 +89,9 @@ Minimum Registrations = Minimum whole number of participants whose contributions
     T --> V[Display financial report]
     U --> V
     V --> W([Stop])
+```
+
+
 
 
 
@@ -135,4 +139,3 @@ Status: Additional funding is required.
 
 ---
 
-For the given example, the total budget is ₹43,000, and the expected 100 participants generate a remaining funding gap of ₹1,000. The program determines that **120 registrations are required to break even**, assuming the sponsorship, participant contribution, and cost estimates remain unchanged.
