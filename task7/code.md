@@ -53,7 +53,7 @@ Minimum Registrations = Minimum whole number of participants whose contributions
 ```mermind
 
 
-flowchart TD
+
     A([Start]) --> B[/Enter venue, equipment and transport costs/]
     B --> C[/Enter catering and certificate costs per person/]
     C --> D[/Enter expected participants/]
