@@ -1,6 +1,5 @@
 
-
-## 1. Problem Statement
+ 1. Problem Statement
 
 The Retail Billing System with Multiple Discount Rules is designed to generate an itemized invoice for customers purchasing multiple products. The system calculates product costs based on quantities, applies category-specific taxes, provides discounts based on purchase thresholds, and enforces a maximum concession limit.
 
@@ -12,7 +11,7 @@ The system also validates user inputs, prevents invalid quantities and prices, a
 
 
 
-## 2. Algorithm
+ 2. Algorithm
 
 **Step 1:** Start the program.
 
