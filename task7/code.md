@@ -88,10 +88,8 @@ Minimum Registrations = Minimum whole number of participants whose contributions
     T --> V[Display financial report]
     U --> V
     V --> W([Stop])
-```
 
 
----
 
 
 ## 5. Sample Input
