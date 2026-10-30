@@ -1,4 +1,4 @@
-# University Scholarship Allocation System
+
 
 ## 1. Problem Statement
 
@@ -40,72 +40,43 @@ Finally, the system should display the ranked list of eligible students, rejecte
 12. Stop.
 
  3. Flowchart
-```mermid
+```mermaid
 
 
-Flowchart Lulus Dan Tidak Lulus - Teman Belajar
 
-[teemanbelajar.blogspot.com](<https://teemanbelajar.blogspot.com/2021/11/flowchart-lulus-dan-tidak-lulus.html?utm_source=chatgpt.com>)
+               
+flowchart TD
+    A([START]) --> B[/Input Scholarship Criteria/]
+    B --> C[/Enter Number of Students/]
+    C --> D[/Enter Student Details/]
+    D --> E[Check Aggregate Marks]
+    E --> F[Check Subject-wise Minimum Marks]
+    F --> G[Check Attendance Percentage]
+    G --> H[Check Annual Family Income]
+    H --> I{All Eligibility Conditions Satisfied?}
 
-Flowchart representation:
+    I -- Yes --> J[Add Student to Eligible List]
+    I -- No --> K[Add Student to Rejected List]
 
-text
+    J --> L{More Students?}
+    K --> L
 
-```
-                 START
-                   |
-                   v
-       Input Scholarship Criteria
-                   |
-                   v
-         Input Number of Students
-                   |
-                   v
-          Read Student Details
-                   |
-                   v
-         Check Aggregate Marks
-                   |
-                   v
-         Check Subject-wise Marks
-                   |
-                   v
-          Check Attendance
-                   |
-                   v
-          Check Family Income
-                   |
-                   v
-         All Conditions Satisfied?
-              /          \
-            YES           NO
-             |             |
-             v             v
-       Add to Eligible   Add to Rejected
-           List             List
-             |                |
-             +-------+--------+
-                     |
-                     v
-             More Students?
-               /       \
-             YES        NO
-              |          |
-              v          v
-          Read Next   Sort Eligible
-           Student     Students
-                         |
-                         v
-                  Resolve Ties
-                         |
-                         v
-                   Assign Ranks
-                         |
-                         v
-                  Display Results
-                         |
-                         v
-                       STOP
+    L -- Yes --> D
+    L -- No --> M[Sort Eligible Students]
+
+    M --> N[Rank by Aggregate Marks]
+    N --> O[Resolve Ties Using Attendance]
+    O --> P[Compare Minimum Subject Marks]
+    P --> Q[Compare Family Income]
+    Q --> R[Compare Student ID]
+
+    R --> S[Assign Final Ranks]
+    S --> T[/Display Eligible Students/]
+    T --> U[/Display Rejected Students and Reasons/]
+    U --> V[/Display Final Summary/]
+    V --> W([STOP])
+
+             
 ```
 
 ## 5. Sample Input
