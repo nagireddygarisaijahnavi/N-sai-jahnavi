@@ -11,7 +11,9 @@ Develop a Python program to validate student course registrations using **tuples
 
 
 ## 2. Flowchart
-```mermind
+```merimind
+
+
     A([Start]) --> B[Define student registration tuples]
     B --> C[Define course validation rules]
     C --> D[Select a student registration]
@@ -33,7 +35,6 @@ Develop a Python program to validate student course registrations using **tuples
     E -- No --> O
     O --> P([End])
 ```
-
 
 ## 4. Sample Input
 
@@ -72,4 +73,3 @@ Registered courses: ('Python', 'DBMS')
 
 Validation completed.
 ```
-
