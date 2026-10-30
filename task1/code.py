@@ -79,7 +79,7 @@ for rank, s in enumerate(eligible, start=1):
         str(s["attendance"]) + "%"
     )
 
-# Display rejected students
+ Display rejected students
 print("\n========== REJECTED STUDENTS ==========")
 
 for s, reasons in rejected:
