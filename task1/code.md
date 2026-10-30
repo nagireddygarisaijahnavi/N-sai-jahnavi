@@ -46,11 +46,8 @@ Balance = Final Bill − Amount Paid
 **Step 11:** Stop the program.
 
 ## 3. Flowchart Using 
-```mermaid
+```mermaid.
 
-The following Mermaid code represents the complete flow of the Hospital Billing and Patient Classification System.
-
-```mermaid
 flowchart TD
     A([Start]) --> B[/Enter consultation charges/]
     B --> C[/Enter diagnostic charges/]
