@@ -1,6 +1,6 @@
 source code
 
-# Hospital Billing and Patient Classification System
+
 
 # Step 1: Get hospital charges
 consultation = float(input("Enter consultation charges: "))
