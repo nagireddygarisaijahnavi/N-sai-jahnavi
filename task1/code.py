@@ -1,101 +1,61 @@
+source code
 
+# Hospital Billing and Patient Classification System
 
-# Category-wise GST rates
-tax_rates = {
-    "electronics": 18,
-    "clothing": 5,
-    "groceries": 0
-}
+# Step 1: Get hospital charges
+consultation = float(input("Enter consultation charges: "))
+diagnostic = float(input("Enter diagnostic charges: "))
+treatment = float(input("Enter treatment charges: "))
 
-# Discount rules
-MAX_DISCOUNT = 2000
+# Step 2: Validate charges
+if consultation < 0 or diagnostic < 0 or treatment < 0:
+    print("Invalid input! Charges cannot be negative.")
 
-products = []
-total_subtotal = 0
-total_tax = 0
-
-# Input number of products
-n = int(input("Enter number of products: "))
-
-# Read product details
-for i in range(n):
-    print("\nEnter details of Product", i + 1)
-
-    pid = input("Product ID: ")
-    name = input("Product Name: ")
-    category = input("Category (electronics/clothing/groceries): ").lower()
-    price = float(input("Price: "))
-    quantity = int(input("Quantity: "))
-
-    if category not in tax_rates:
-        print("Invalid category! Please enter a valid category.")
-        continue
-
-    # Calculate subtotal
-    subtotal = price * quantity
-
-    # Calculate category-specific tax
-    tax = subtotal * tax_rates[category] / 100
-
-    # Store product details
-    products.append({
-        "id": pid,
-        "name": name,
-        "category": category,
-        "price": price,
-        "quantity": quantity,
-        "subtotal": subtotal,
-        "tax": tax
-    })
-
-    total_subtotal += subtotal
-    total_tax += tax
-
-# Calculate amount before discount
-total_amount = total_subtotal + total_tax
-
-# Apply threshold-based discount
-if total_amount > 10000:
-    discount_rate = 10
-elif total_amount > 5000:
-    discount_rate = 5
 else:
-    discount_rate = 0
+    # Step 3: Calculate total bill
+    total_bill = consultation + diagnostic + treatment
 
-discount = total_amount * discount_rate / 100
+    # Step 4: Check concession eligibility
+    eligibility = input("Is the patient eligible for concession? (yes/no): ").lower()
 
-# Apply maximum concession limit
-discount = min(discount, MAX_DISCOUNT)
+    if eligibility == "yes":
+        discount = total_bill * 0.10
+    elif eligibility == "no":
+        discount = 0
+    else:
+        print("Invalid concession eligibility.")
+        exit()
 
-# Calculate final amount
-final_amount = total_amount - discount
+    # Step 5: Calculate final bill
+    final_bill = total_bill - discount
 
-# Generate invoice
-print("\n" + "=" * 65)
-print("                 RETAIL BILLING INVOICE")
-print("=" * 65)
+    # Step 6: Accept payment
+    amount_paid = float(input("Enter amount paid: "))
 
-print(f"{'ID':<8}{'Product':<15}{'Qty':<6}{'Price':<10}{'Subtotal':<12}{'Tax':<10}")
-print("-" * 65)
+    # Step 7: Validate payment
+    if amount_paid < 0 or amount_paid > final_bill:
+        print("Invalid payment amount.")
 
-for p in products:
-    print(
-        f"{p['id']:<8}{p['name']:<15}"
-        f"{p['quantity']:<6}{p['price']:<10.2f}"
-        f"{p['subtotal']:<12.2f}{p['tax']:<10.2f}"
-    )
+    else:
+        # Step 8: Calculate remaining balance
+        balance = final_bill - amount_paid
 
-print("-" * 65)
+        # Step 9: Classify patient
+        if balance == 0:
+            classification = "Full Payment Patient"
+        elif amount_paid > 0:
+            classification = "Partial Payment Patient"
+        else:
+            classification = "Pending Payment Patient"
 
-print(f"Subtotal Amount       : Rs. {total_subtotal:.2f}")
-print(f"Total GST             : Rs. {total_tax:.2f}")
-print(f"Amount Before Discount: Rs. {total_amount:.2f}")
-print(f"Discount Rate         : {discount_rate}%")
-print(f"Discount Amount       : Rs. {discount:.2f}")
-print(f"Maximum Concession    : Rs. {MAX_DISCOUNT:.2f}")
-print("-" * 65)
-print(f"FINAL PAYABLE AMOUNT  : Rs. {final_amount:.2f}")
-print("=" * 65)
-print("          THANK YOU! VISIT AGAIN!")
-
-
+        # Step 10: Display bill details
+        print("\n--- HOSPITAL BILL DETAILS ---")
+        print(f"Consultation Charges: Rs. {consultation:.2f}")
+        print(f"Diagnostic Charges: Rs. {diagnostic:.2f}")
+        print(f"Treatment Charges: Rs. {treatment:.2f}")
+        print(f"Total Bill: Rs. {total_bill:.2f}")
+        print(f"Concession: Rs. {discount:.2f}")
+        print(f"Final Bill: Rs. {final_bill:.2f}")
+        print(f"Amount Paid: Rs. {amount_paid:.2f}")
+        print(f"Remaining Balance: Rs. {balance:.2f}")
+        print(f"Patient Classification: {classification}")
