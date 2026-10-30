@@ -67,7 +67,7 @@ Discrepancy = Actual Closing Stock − Expected Closing Stock
 ```mermaid
 
 
-```mermaid
+
 flowchart TD
     A([Start]) --> B[/Enter number of products/]
     B --> C[Initialize total revenue and inventory summary]
