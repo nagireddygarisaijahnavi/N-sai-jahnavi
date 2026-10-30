@@ -8,39 +8,7 @@ The system accepts the vehicle type and parking entry and exit times. It validat
 
 If the vehicle stays overnight, the system applies the overnight parking charge. It also applies a daily maximum fee and additional penalties when applicable. Finally, it displays the parking duration, basic charges, penalties, and total amount payable.
 
-### Objectives
-1. Accept vehicle category and entry and exit times.
-2. Validate the time inputs.
-3. Calculate the total parking duration.
-4. Calculate fees according to the vehicle category.
-5. Identify overnight parking.
-6. Apply the daily maximum parking limit.
-7. Apply penalties for invalid or excessive parking conditions.
-8. Display the final parking bill.
 
-### Example Parking Policy
-
-For this program, the following sample rules are used:
-
-| Vehicle category | Hourly rate |
-|---|---:|
-| Two-wheeler | ₹10 |
-| Car | ₹20 |
-| Heavy vehicle | ₹30 |
-
-Additional rules:
-
-- **Minimum charge:** One hour.
-- **Partial hours:** Any fraction of an hour is charged as a full hour.
-- **Overnight parking:** An additional ₹50 if the parking period crosses midnight.
-- **Daily limit:** Maximum ₹200 per calendar day for parking charges, before the overnight surcharge and penalty.
-- **Penalty:** ₹100 if the parking duration exceeds 24 hours.
-- **Time format:** 24-hour format (`HH:MM`).
-- **Exit time:** Must be later than entry time. To support overnight parking, an exit time earlier than the entry time is interpreted as the following day.
-
-These are illustrative rules for the programming exercise, not actual parking regulations.
-
----
 
 ## 2. Algorithm
 
