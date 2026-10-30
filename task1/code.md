@@ -6,14 +6,6 @@ The Hospital Billing and Patient Classification System is designed to calculate 
 
 The program calculates the final bill after applying eligible discounts and classifies the patient as a **Full Payment Patient, Partial Payment Patient, or Pending Payment Patient** based on the payment status.
 
-### Objectives
-1. Accept consultation, diagnostic, and treatment charges.
-2. Calculate the total hospital bill.
-3. Apply concessions based on eligibility conditions.
-4. Validate billing constraints, such as negative charges or invalid payments.
-5. Calculate the final bill after discounts.
-6. Classify the patient according to the payment policy.
-7. Display the total bill, discount, final amount, payment, and balance.
 
 ## 2. Algorithm
 
