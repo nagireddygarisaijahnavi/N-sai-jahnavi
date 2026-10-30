@@ -15,10 +15,6 @@ The program should:
 
 ## 2. Flowchart 
 ```mermind
-
-Copy the following code into a Mermaid editor to generate the flowchart.
-
-```mermaid
 flowchart TD
     A([Start]) --> B[Enter travel budget]
     B --> C[Enter expenses, currencies and exchange rates]
