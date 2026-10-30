@@ -59,7 +59,7 @@ Final Bill = Total Subtotal − Total Discount + Total Tax
 
 
 
-flowchart TD
+
     A([Start]) --> B[/Enter number of products/]
     B --> C[Initialize subtotal and invoice]
     C --> D[/Enter product name, category, price and quantity/]
