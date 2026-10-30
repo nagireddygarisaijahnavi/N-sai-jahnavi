@@ -91,7 +91,7 @@ flowchart TD
     R --> S[Generate itemized invoice]
     S --> T[/Display invoice and total payable/]
     T --> U([Stop])
-```
+
 
 
 
