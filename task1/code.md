@@ -46,7 +46,7 @@ Balance = Final Bill − Amount Paid
 **Step 11:** Stop the program.
 
 ## 3. Flowchart Using 
-```mermaid.
+```mermaid
 
 flowchart TD
     A([Start]) --> B[/Enter consultation charges/]
