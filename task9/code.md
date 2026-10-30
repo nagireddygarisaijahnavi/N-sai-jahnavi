@@ -15,7 +15,7 @@ The program should:
 
 ## 2. Flowchart 
 ```mermind
-flowchart TD
+
     A([Start]) --> B[Enter travel budget]
     B --> C[Enter expenses, currencies and exchange rates]
     C --> D[Set conversion fee percentage]
