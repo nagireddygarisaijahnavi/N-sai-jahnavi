@@ -1,96 +1,101 @@
-source code
 
 
-MIN_AGGREGATE = 75
-MIN_SUBJECT_MARKS = 60
-MIN_ATTENDANCE = 75
-MAX_INCOME = 300000
+# Category-wise GST rates
+tax_rates = {
+    "electronics": 18,
+    "clothing": 5,
+    "groceries": 0
+}
 
-eligible = []
-rejected = []
+# Discount rules
+MAX_DISCOUNT = 2000
 
-n = int(input("Enter number of students: "))
+products = []
+total_subtotal = 0
+total_tax = 0
 
+# Input number of products
+n = int(input("Enter number of products: "))
+
+# Read product details
 for i in range(n):
-    print("\nEnter details of Student", i + 1)
+    print("\nEnter details of Product", i + 1)
 
-    sid = int(input("Student ID: "))
-    name = input("Student Name: ")
-    aggregate = float(input("Aggregate Marks: "))
+    pid = input("Product ID: ")
+    name = input("Product Name: ")
+    category = input("Category (electronics/clothing/groceries): ").lower()
+    price = float(input("Price: "))
+    quantity = int(input("Quantity: "))
 
-    subjects = list(map(int, input(
-        "Enter subject marks separated by spaces: "
-    ).split()))
+    if category not in tax_rates:
+        print("Invalid category! Please enter a valid category.")
+        continue
 
-    attendance = float(input("Attendance Percentage: "))
-    income = float(input("Annual Family Income: "))
+    # Calculate subtotal
+    subtotal = price * quantity
 
-    reasons = []
+    # Calculate category-specific tax
+    tax = subtotal * tax_rates[category] / 100
 
-    # Check eligibility
-    if aggregate < MIN_AGGREGATE:
-        reasons.append("Aggregate marks below 75%")
-
-    if not subjects or min(subjects) < MIN_SUBJECT_MARKS:
-        reasons.append("Subject marks below minimum")
-
-    if attendance < MIN_ATTENDANCE:
-        reasons.append("Attendance below 75%")
-
-    if income > MAX_INCOME:
-        reasons.append("Family income exceeds limit")
-
-    student = {
-        "id": sid,
+    # Store product details
+    products.append({
+        "id": pid,
         "name": name,
-        "aggregate": aggregate,
-        "min_subject": min(subjects) if subjects else 0,
-        "attendance": attendance,
-        "income": income
-    }
+        "category": category,
+        "price": price,
+        "quantity": quantity,
+        "subtotal": subtotal,
+        "tax": tax
+    })
 
-    if len(reasons) == 0:
-        eligible.append(student)
-    else:
-        rejected.append((student, reasons))
+    total_subtotal += subtotal
+    total_tax += tax
 
+# Calculate amount before discount
+total_amount = total_subtotal + total_tax
 
-# Sort eligible students and resolve ties
-eligible.sort(
-    key=lambda s: (
-        -s["aggregate"],
-        -s["attendance"],
-        -s["min_subject"],
-        s["income"],
-        s["id"]
-    )
-)
+# Apply threshold-based discount
+if total_amount > 10000:
+    discount_rate = 10
+elif total_amount > 5000:
+    discount_rate = 5
+else:
+    discount_rate = 0
 
-# Display eligible students
-print("\n========== ELIGIBLE STUDENTS ==========")
-print("Rank ID   Name     Marks   Attendance")
+discount = total_amount * discount_rate / 100
 
-for rank, s in enumerate(eligible, start=1):
+# Apply maximum concession limit
+discount = min(discount, MAX_DISCOUNT)
+
+# Calculate final amount
+final_amount = total_amount - discount
+
+# Generate invoice
+print("\n" + "=" * 65)
+print("                 RETAIL BILLING INVOICE")
+print("=" * 65)
+
+print(f"{'ID':<8}{'Product':<15}{'Qty':<6}{'Price':<10}{'Subtotal':<12}{'Tax':<10}")
+print("-" * 65)
+
+for p in products:
     print(
-        rank,
-        s["id"],
-        s["name"],
-        s["aggregate"],
-        str(s["attendance"]) + "%"
+        f"{p['id']:<8}{p['name']:<15}"
+        f"{p['quantity']:<6}{p['price']:<10.2f}"
+        f"{p['subtotal']:<12.2f}{p['tax']:<10.2f}"
     )
 
- Display rejected students
-print("\n========== REJECTED STUDENTS ==========")
+print("-" * 65)
 
-for s, reasons in rejected:
-    print("\nID:", s["id"])
-    print("Name:", s["name"])
-    print("Reason:", ", ".join(reasons))
+print(f"Subtotal Amount       : Rs. {total_subtotal:.2f}")
+print(f"Total GST             : Rs. {total_tax:.2f}")
+print(f"Amount Before Discount: Rs. {total_amount:.2f}")
+print(f"Discount Rate         : {discount_rate}%")
+print(f"Discount Amount       : Rs. {discount:.2f}")
+print(f"Maximum Concession    : Rs. {MAX_DISCOUNT:.2f}")
+print("-" * 65)
+print(f"FINAL PAYABLE AMOUNT  : Rs. {final_amount:.2f}")
+print("=" * 65)
+print("          THANK YOU! VISIT AGAIN!")
 
-# Final summary
-print("\n========== FINAL SUMMARY ==========")
-print("Total Applicants:", n)
-print("Eligible Students:", len(eligible))
-print("Rejected Students:", len(rejected))
-print("\nScholarship Allocation Completed!")
 
