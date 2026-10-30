@@ -1,160 +1,134 @@
-
+# Hospital Billing and Patient Classification System Using Python
 
 ## 1. Problem Statement
 
-Develop a Python-based University Scholarship Allocation System to evaluate students for scholarship eligibility based on aggregate marks, subject-wise minimum marks, attendance percentage, and annual family income.
+The Hospital Billing and Patient Classification System is designed to calculate the total hospital bill for a patient based on consultation charges, diagnostic test charges, and treatment charges. The system applies conditional concessions according to the patient's eligibility, validates billing constraints, and classifies patients based on a specified payment policy.
 
-The system should accept student details, verify all eligibility conditions, and classify students as eligible or ineligible. Eligible students must be ranked in descending order based on aggregate marks.
+The program calculates the final bill after applying eligible discounts and classifies the patient as a **Full Payment Patient, Partial Payment Patient, or Pending Payment Patient** based on the payment status.
 
-If two or more students have equal aggregate marks, ties should be resolved using the following predefined rules:
-
-1. Higher attendance percentage.
-2. Higher minimum subject marks.
-3. Lower annual family income.
-4. Lower student ID.
-
-Finally, the system should display the ranked list of eligible students, rejected students with reasons, and the total number of eligible and ineligible applicants.
+### Objectives
+1. Accept consultation, diagnostic, and treatment charges.
+2. Calculate the total hospital bill.
+3. Apply concessions based on eligibility conditions.
+4. Validate billing constraints, such as negative charges or invalid payments.
+5. Calculate the final bill after discounts.
+6. Classify the patient according to the payment policy.
+7. Display the total bill, discount, final amount, payment, and balance.
 
 ## 2. Algorithm
 
-1. Start the program.
-2. Read the scholarship eligibility criteria.
-3. Enter the number of student applicants.
-4. Read each student's ID, name, aggregate marks, subject-wise marks, attendance, and family income.
-5. Check the following eligibility conditions:
-   - Aggregate marks must be at least 75%.
-   - Every subject mark must be at least 60.
-   - Attendance must be at least 75%.
-   - Annual family income must not exceed ₹3,00,000.
-6. If all conditions are satisfied, add the student to the eligible list.
-7. Otherwise, add the student to the rejected list with the reason.
-8. Sort eligible students using:
-   - Aggregate marks in descending order.
-   - Attendance in descending order.
-   - Minimum subject marks in descending order.
-   - Family income in ascending order.
-   - Student ID in ascending order.
-9. Assign ranks to eligible students.
-10. Display eligible students and rejected students.
-11. Display the final summary.
-12. Stop.
+**Step 1:** Start the program.
 
- 3. Flowchart
+**Step 2:** Read the consultation, diagnostic, and treatment charges.
+
+**Step 3:** Read the patient's concession eligibility and payment amount.
+
+**Step 4:** Validate the input values.
+- Charges must not be negative.
+- Payment must not be negative.
+- Payment must not exceed the final bill.
+
+**Step 5:** Calculate the total bill.
+
+Total Bill = Consultation Charges + Diagnostic Charges + Treatment Charges
+
+**Step 6:** Check concession eligibility.
+- If the patient is eligible, apply a 10% concession.
+- Otherwise, apply no concession.
+
+**Step 7:** Calculate the final bill.
+
+Final Bill = Total Bill − Concession
+
+**Step 8:** Calculate the remaining balance.
+
+Balance = Final Bill − Amount Paid
+
+**Step 9:** Classify the patient.
+- If the balance is zero, classify as **Full Payment**.
+- If the amount paid is greater than zero but the balance remains, classify as **Partial Payment**.
+- If no amount is paid, classify as **Pending Payment**.
+
+**Step 10:** Display the bill details and patient classification.
+
+**Step 11:** Stop the program.
+
+## 3. Flowchart Using Mermaid Code
+
+The following Mermaid code represents the complete flow of the Hospital Billing and Patient Classification System.
+
 ```mermaid
-
-
-
-               
 flowchart TD
-    A([START]) --> B[/Input Scholarship Criteria/]
-    B --> C[/Enter Number of Students/]
-    C --> D[/Enter Student Details/]
-    D --> E[Check Aggregate Marks]
-    E --> F[Check Subject-wise Minimum Marks]
-    F --> G[Check Attendance Percentage]
-    G --> H[Check Annual Family Income]
-    H --> I{All Eligibility Conditions Satisfied?}
+    A([Start]) --> B[/Enter consultation charges/]
+    B --> C[/Enter diagnostic charges/]
+    C --> D[/Enter treatment charges/]
+    D --> E[/Enter concession eligibility/]
+    E --> F{Are charges valid?}
 
-    I -- Yes --> J[Add Student to Eligible List]
-    I -- No --> K[Add Student to Rejected List]
+    F -- No --> G[/Display invalid charges/]
+    G --> Z([Stop])
 
-    J --> L{More Students?}
+    F -- Yes --> H[Calculate total bill]
+    H --> I{Eligible for concession?}
+
+    I -- Yes --> J[Apply 10 percent discount]
+    I -- No --> K[Discount = 0]
+
+    J --> L[Calculate final bill]
     K --> L
 
-    L -- Yes --> D
-    L -- No --> M[Sort Eligible Students]
+    L --> M[/Enter amount paid/]
+    M --> N{Is payment valid?}
 
-    M --> N[Rank by Aggregate Marks]
-    N --> O[Resolve Ties Using Attendance]
-    O --> P[Compare Minimum Subject Marks]
-    P --> Q[Compare Family Income]
-    Q --> R[Compare Student ID]
+    N -- No --> O[/Display invalid payment/]
+    O --> Z
 
-    R --> S[Assign Final Ranks]
-    S --> T[/Display Eligible Students/]
-    T --> U[/Display Rejected Students and Reasons/]
-    U --> V[/Display Final Summary/]
-    V --> W([STOP])
+    N -- Yes --> P[Calculate remaining balance]
+    P --> Q{Is balance zero?}
 
-             
+    Q -- Yes --> R[Full Payment Patient]
+    Q -- No --> S{Is amount paid greater than zero?}
+
+    S -- Yes --> T[Partial Payment Patient]
+    S -- No --> U[Pending Payment Patient]
+
+    R --> V[/Display bill and classification/]
+    T --> V
+    U --> V
+
+    V --> Z([Stop])
 ```
 
-## 5. Sample Input
+**How to view the flowchart:** Copy the Mermaid code and paste it into the Mermaid Live Editor: [Mermaid Live Editor](https://mermaid.live/?utm_source=chatgpt.com)
 
-text
+---
 
-```
-Enter number of students: 5
+ 
 
-Enter details of Student 1
-Student ID: 101
-Student Name: Arun
-Aggregate Marks: 85
-Enter subject marks separated by spaces: 70 80 90
-Attendance Percentage: 90
-Annual Family Income: 200000
+### 5. Sample Input
 
-Enter details of Student 2
-Student ID: 102
-Student Name: Balu
-Aggregate Marks: 85
-Enter subject marks separated by spaces: 75 85 90
-Attendance Percentage: 85
-Annual Family Income: 180000
-
-Enter details of Student 3
-Student ID: 103
-Student Name: Charan
-Aggregate Marks: 72
-Enter subject marks separated by spaces: 65 70 75
-Attendance Percentage: 90
-Annual Family Income: 150000
-
-Enter details of Student 4
-Student ID: 104
-Student Name: Divya
-Aggregate Marks: 90
-Enter subject marks separated by spaces: 80 85 95
-Attendance Percentage: 95
-Annual Family Income: 250000
-
-Enter details of Student 5
-Student ID: 105
-Student Name: Esha
-Aggregate Marks: 80
-Enter subject marks separated by spaces: 65 70 75
-Attendance Percentage: 70
-Annual Family Income: 200000
+```text
+Enter consultation charges: 500
+Enter diagnostic charges: 1200
+Enter treatment charges: 3000
+Is the patient eligible for concession? (yes/no): yes
+Enter amount paid: 2000
 ```
 
-## 6. Sample Output
+### 6. Sample Output
 
-text
-
+```text
+--- HOSPITAL BILL DETAILS ---
+Consultation Charges: Rs. 500.00
+Diagnostic Charges: Rs. 1200.00
+Treatment Charges: Rs. 3000.00
+Total Bill: Rs. 4700.00
+Concession: Rs. 470.00
+Final Bill: Rs. 4230.00
+Amount Paid: Rs. 2000.00
+Remaining Balance: Rs. 2230.00
+Patient Classification: Partial Payment Patient
 ```
-========== ELIGIBLE STUDENTS ==========
 
-Rank ID   Name     Marks   Attendance
-1    104  Divya     90.0      95.0%
-2    101  Arun      85.0      90.0%
-3    102  Balu      85.0      85.0%
-
-========== REJECTED STUDENTS ==========
-
-ID: 103
-Name: Charan
-Reason: Aggregate marks below 75%
-
-ID: 105
-Name: Esha
-Reason: Attendance below 75%
-
-========== FINAL SUMMARY ==========
-
-Total Applicants: 5
-Eligible Students: 3
-Rejected Students: 2
-
-Scholarship Allocation Completed!
-```
+---
 
