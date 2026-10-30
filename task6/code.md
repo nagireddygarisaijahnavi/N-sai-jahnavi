@@ -1,4 +1,4 @@
-# Retail Billing with Multiple Discount Rules Using Python
+
 
 ## 1. Problem Statement
 
@@ -8,35 +8,9 @@ The program accepts product names, categories, prices, and quantities. It calcul
 
 The system also validates user inputs, prevents invalid quantities and prices, and displays an itemized invoice containing product details, discounts, taxes, and the final amount payable.
 
-### Objectives
-
-1. Accept multiple products and their quantities.
-2. Calculate the subtotal for each product.
-3. Apply category-specific tax rates.
-4. Apply threshold-based discounts.
-5. Enforce a maximum discount limit.
-6. Validate product prices and quantities.
-7. Generate an itemized invoice.
 8. Display the final amount payable.
 
-### Example Billing Rules
 
-The following rules are used in this programming example:
-
-| Rule | Condition |
-|---|---|
-| Electronics tax | 18% |
-| Clothing tax | 5% |
-| Grocery tax | 2% |
-| Purchase discount | 10% when subtotal is ₹5,000 or more |
-| Additional discount | 5% when subtotal is ₹10,000 or more, instead of the 10% discount |
-| Maximum concession | ₹1,500 per invoice |
-
-**Discount policy:** The applicable threshold discount is calculated on the total pre-tax subtotal. The discount is limited to ₹1,500 and distributed proportionally across the items. Taxes are calculated on the discounted item amounts.
-
-These are illustrative rates and rules for a programming assignment, not a statement of current tax law.
-
----
 
 ## 2. Algorithm
 
